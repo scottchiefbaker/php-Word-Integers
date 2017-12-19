@@ -46,10 +46,12 @@ class wordInt {
 			}
 		}
 
-		// Conver the XX bit sections back in to an actual long integer
+		// Convert the XX bit sections back in to an actual long integer
 		$int = 0;
 		for ($i = 0; $i < count($ret); $i++) {
-			$num = $ret[$i];
+			// Integer value of this ONE word
+			$num  = $ret[$i];
+			// Bitshift the number to the left X bits to reconstruct the big integer
 			$int += $num << ($i * self::$bits_per_word);
 		}
 
@@ -59,6 +61,7 @@ class wordInt {
 	static function number_to_string($number) {
 		$list = self::get_word_list();
 
+		// Make sure the input is a number
 		$number = doubleval($number);
 
 		if ($number < 0) {
