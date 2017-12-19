@@ -11,3 +11,6 @@ $number = string_to_number("FloodsNeedyCharm");
 ```
 
 Uses a `dictionary.txt` file for the mapping. The dictionary must be located in the same directory as the PHP class file.
+
+#### Alternatives:
+* [Hashids](http://hashids.org/)
