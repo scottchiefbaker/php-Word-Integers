@@ -103,6 +103,13 @@ class wordInt {
 		$i   = file($file);
 		$ret = array_map("trim",$i);
 
+		$total  = count($ret);
+		$needed = 2**self::$bits_per_word;
+
+		if ($needed > $total) {
+			trigger_error("Not enough data in dictionary file. Need $needed but only found $total.",E_USER_ERROR);
+		}
+
 		return $ret;
 	}
 }
