@@ -6,8 +6,8 @@ PHP class that converts numbers to words strings and vice versa. Similar to GfyC
 ```PHP
 require("wordInt.class.php");
 
-$word   = wordInt::number_to_string(57893);
-$number = wordInt::string_to_number("FloodsNeedyCharm");
+$word   = wordInt::number_to_string(1234567890);
+$number = wordInt::string_to_number("ConveyNovaAiry");
 ```
 
 Uses a `dictionary.txt` file for the mapping. The dictionary must be located in the same directory as the PHP class file.

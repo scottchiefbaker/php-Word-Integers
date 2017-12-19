@@ -10,8 +10,8 @@
 //
 // require("wordInt.class.php");
 //
-// $word   = wordInt::number_to_string(57893);
-// $number = wordInt::string_to_number("FloodsNeedyCharm");
+// $word   = wordInt::number_to_string(1234567890);
+// $number = wordInt::string_to_number("ConveyNovaAiry");
 //
 ///////////////////////////////////////////////////////////////////////////////////
 //
