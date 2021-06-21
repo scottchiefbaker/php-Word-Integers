@@ -25,15 +25,26 @@ class wordInt {
 	public static $word_file     = __DIR__ . "/dictionary.txt";
 
 	static function string_to_number($str) {
-		$list = self::get_word_list();
+		static $lookup = [];
+
 		// Split the string at all of the capital letters
 		$parts = preg_split('/(?=[A-Z])/',$str, -1, PREG_SPLIT_NO_EMPTY);
+
+		// Build the lookup table but keep it static so we only do it once
+		if (!$lookup) {
+			$list = self::get_word_list();
+
+			for ($i = 0; $i < count($list); $i++) {
+				$word          = $list[$i];
+				$lookup[$word] = $i;
+			}
+		}
 
 		$ret = array();
 		// Find the XX bit interger for each word
 		foreach ($parts as $p) {
 			$p     = strtolower($p);
-			$index = array_search($p,$list);
+			$index = $lookup[$p];
 
 			if (self::$debug) {
 				print "$p = $index<br />";
